@@ -1,4 +1,3 @@
-
 byte pin[]= {2,3,4,5,6,7,8,9,10,11,12,13};
 byte red_0   = pin[0] , red_1   = pin[3] , red_2   = pin[6] , red_3   = pin[9];
 byte green_0 = pin[1] , green_1 = pin[4] , green_2 = pin[7] , green_3 = pin[10];
@@ -64,7 +63,7 @@ void loop()
                    digitalWrite(green_2 , HIGH);
                    digitalWrite(blue_2 , LOW);
                    break;
-               case '10':
+               case 'E':
                    digitalWrite(red_2 , LOW);
                    digitalWrite(green_2 , LOW);
                    digitalWrite(blue_2 , HIGH);
@@ -84,22 +83,22 @@ void loop()
                    digitalWrite(green_3 , LOW);
                    digitalWrite(blue_3 , HIGH);
                    break;
-               case '14':
+               case 'F':
                    digitalWrite(red_0 , LOW);
                    digitalWrite(green_0 , LOW);
                    digitalWrite(blue_0 , LOW);
                    break;
-               case '15':
+               case 'G':
                    digitalWrite(red_1 , LOW);
                    digitalWrite(green_1 , LOW);
                    digitalWrite(blue_1 , LOW);
                    break;
-               case '16':
+               case 'H':
                    digitalWrite(red_2 , LOW);
                    digitalWrite(green_2 , LOW);
                    digitalWrite(blue_2 , LOW);
                    break;
-               case '17':
+               case 'I':
                    digitalWrite(red_3 , LOW);
                    digitalWrite(green_3 , LOW);
                    digitalWrite(blue_3 , LOW);

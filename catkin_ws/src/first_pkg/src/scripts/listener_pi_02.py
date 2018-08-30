@@ -8,7 +8,7 @@ import serial
 
 def callback(data):
     select_color = data.data
-    trigger = { 'R': (8,1),'G': (9,1),'B': (10,1),'r': (8,1),'g': (9,1),'b': (10,1) }
+    trigger = { 'R': (8,1),'G': (9,1),'B': (10,1),'r': (8,1),'g': (9,1),'b': ('E',1) }
     close   = {'C':(2,3,4,0),'c':(2,3,4,0)}
     
     ##  configure in raspberry pi  ##   
