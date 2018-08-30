@@ -8,7 +8,7 @@ import serial
 
 def callback(data):
     select_color = data.data
-    trigger = { 'R': (2,1),'G': (3,1),'B': (4,1),'r': (2,1),'g': (3,1),'b': (4,1) }
+    trigger = { 'R': ('A',1),'G': ('B',1),'B': ('D',1),'r': ('A',1),'g': ('B',1),'b': ('D',1) }
     close   = {'C':(2,3,4,0),'c':(2,3,4,0)}
     
     ##  configure in raspberry pi  ##   
@@ -28,7 +28,7 @@ def callback(data):
 
 def listener():
     
-    rospy.init_node('listener_pi_00', anonymous=True)
+    rospy.init_node('listener_pi_03', anonymous=True)
     rospy.Subscriber("color_00", String, callback)
     rospy.spin()
 
