@@ -5,7 +5,7 @@ from std_msgs.msg import String
 
 def callback(data):
     select_color = data.data
-    trigger = { 'R': (2,1),'G': (3,1),'B': (4,1),'r': (2,1),'g': (3,1),'b': (4,1) }
+    trigger = { 'R': (8,1),'G': (9,1),'B': (10,1),'r': (8,1),'g': (9,1),'b': (10,1) }
     close   = {'C':(9,10,11,0),'c':(9,10,11,0)}
     if select_color in trigger.keys() :
         print 'The color is {} and Pin is {} '.format(select_color, trigger[select_color][0]) 
@@ -19,7 +19,7 @@ def callback(data):
 
 def listener():
     
-    rospy.init_node('listener_computer_00', anonymous=True)
+    rospy.init_node('listener_computer_01', anonymous=True)
     rospy.Subscriber("color_00", String, callback)
     rospy.spin()
 
