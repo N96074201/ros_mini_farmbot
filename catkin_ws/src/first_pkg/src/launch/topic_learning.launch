@@ -1,0 +1,10 @@
+<launch> 
+
+<node pkg="first_pkg" type="listener_pi_00.py"  name="listener_pi_00" />
+<node pkg="first_pkg" type="listener_pi_01.py"  name="listener_pi_01" />
+<node pkg="first_pkg" type="listener_pi_02.py"  name="listener_pi_02" />
+<node pkg="first_pkg" type="listener_pi_03.py"  name="listener_pi_03" />
+
+
+ 
+</launch>
