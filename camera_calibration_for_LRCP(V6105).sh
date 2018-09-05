@@ -7,19 +7,9 @@ if [[ `id -u` -eq 0 ]] ; then
 fi
 
 
-
-
-sudo apt install -y \
-	 ros-kinetic-uvc-camera \
-         ros-kinetic-image-* \
-         ros-kinetic-rqt-image-view \
-         ros-kinetic-camera-calibration \
-         python-imaging-tk \
-         python-pip	
-# These don't have an APT package
-
-pip install pmw
-	
+sudo mkdir ~/.ros/camera_info 
+sudo chmod 0777 ~/.ros/camera_info 
+sudo cp ~/ros_mini_farmbot/camera_calibration/camera.yaml ~/.ros/camera_info/camera.yaml
 
 
 
