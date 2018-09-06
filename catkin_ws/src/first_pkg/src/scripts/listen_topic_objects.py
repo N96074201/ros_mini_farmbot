@@ -14,12 +14,26 @@ import time , os
 import ConfigParser
 
 # conect Arduino
-arduino_uno = serial.Serial("/dev/arduino_uno" , 9600)
+try:
+    arduino_uno = serial.Serial("/dev/arduino_uno" , 9600)
+    connect = 1
+except serial.SerialException:
+    connect = 0
+    print '\nno connection ! \n'
 
-# read ~/.ros/find_object_2d.ini
-config = ConfigParser.ConfigParser() 
-config.read(os.path.expanduser('~/.ros/find_object_2d.ini'))
-start_objID = config.getint('%General','nextObjID')
+# judge ~/.ros/find_object_2d.ini exists?
+file_path = os.path.expanduser('~/.ros/find_object_2d.ini')
+if os.path.isfile( file_path ):
+    # read ~/.ros/find_object_2d.ini and set ros parameter
+    config = ConfigParser.ConfigParser() 
+    config.read(file_path)
+    start_objID = config.getint('%General','nextObjID')
+    rospy.set_param('~start_objID',start_objID)
+    print 'find_object_2d.ini exists ! Use it!\n'
+else:
+    start_objID = rospy.get_param('~start_objID')
+    print 'find_object_2d.ini do not exist ! get ros parameter from /start_objID \n'
+
 red   = start_objID
 green = red + 1
 blue  = green + 1
@@ -29,16 +43,20 @@ def callback(data):
     if detect_MultiArray :
         detect_object = detect_MultiArray[0]
         if detect_object == red :
-            arduino_uno.write('2'.encode())
+            if connect == 1:
+                arduino_uno.write('2'.encode())
             print 'red'
         elif detect_object == green :
-            arduino_uno.write('3'.encode())
+            if connect == 1:
+                arduino_uno.write('3'.encode())
             print 'green'
         elif detect_object == blue :
-            arduino_uno.write('4'.encode())
+            if connect == 1:
+                arduino_uno.write('4'.encode())
             print 'blue'
     else :
-        arduino_uno.write('F'.encode())
+        if connect == 1 :
+            arduino_uno.write('F'.encode())
         print 'No object !'
 
 def listener():
