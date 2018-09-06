@@ -8,7 +8,7 @@ fi
 
 # copy the rules to /etc/udev/rules.d
 
-sudo cp ~/ros_mini_farmbot/catkin_ws/src/first_pkg/uno_driver/py_firmata.rules /etc/udev/rules.d/py_firmata.rules
+sudo cp ~/ros_mini_farmbot/catkin_ws/src/first_pkg/uno_driver/uno.rules /etc/udev/rules.d/uno.rules
 
 sudo udevadm control --reload-rules
 sudo udevadm trigger
