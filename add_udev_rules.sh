@@ -6,10 +6,15 @@ if [[ `id -u` -eq 0 ]] ; then
     exit 1 ;
 fi
 
+# copy the rules to /etc/udev/rules.d
 
-sudo mkdir ~/.ros/camera_info 
-sudo chmod 777 ~/.ros/camera_info 
-sudo cp ~/ros_mini_farmbot/camera_calibration/camera.yaml ~/.ros/camera_info/camera.yaml
+sudo cp ~/ros_mini_farmbot/catkin_ws/src/first_pkg/uno_driver/py_firmata.rules /etc/udev/rules.d/py_firmata.rules
+
+sudo udevadm control --reload-rules
+sudo udevadm trigger
+
+
+	
 
 
 
