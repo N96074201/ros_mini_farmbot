@@ -1,4 +1,4 @@
-## cp py_firmata.rules /etc/udev/rules.d
+## cp uno.rules /etc/udev/rules.d
 ## sudo udevadm control reload-rules
 ## sudo udevadm trigger
 
