@@ -4,5 +4,4 @@
 
 # Arduino_uno
 ATTRS{idVendor}=="1a86" ATTRS{idProduct}=="7523", ENV{ID_MM_DEVICE_IGNORE}="1",MODE:="0666",SYMLINK+="arduino_uno"
-# USB_camera
-ATTRS{idVendor}=="1a86" ATTRS{idProduct}=="7523", ENV{ID_MM_DEVICE_IGNORE}="1",MODE:="0666",SYMLINK+="arduino_uno"
+

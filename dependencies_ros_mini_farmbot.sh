@@ -16,7 +16,8 @@ sudo apt-get install -y \
          libopencv-dev \
          libqt4-dev \
          python-imaging-tk \
-         python-pip	
+         python-pip \
+         python-configobj	
 
 # These don't have an APT package
 
