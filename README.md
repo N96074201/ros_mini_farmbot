@@ -33,6 +33,9 @@ This package contains the gui software of Minifarmbot
 * 4. add items in the windoes of find_object_2d
  
 * 5. run " listen_topic_objects.py " at laptop
+
   ` rosrun first_pkg listen_topic_objects.py`
-* 6. run " listen_topic_objects.py " at raspberryPi . Note arduino must be connected with raspberryPi and Open permissionㄡ 
+  
+* 6. run " listen_topic_objects.py " at raspberryPi . Note arduino must be connected with raspberryPi and Open permission
+
   ` rosrun first_pkg listen_topic_objects.py`
