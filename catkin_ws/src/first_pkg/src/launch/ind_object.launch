@@ -1,0 +1,11 @@
+<launch>
+    
+    <!--  camera  -->
+    <node pkg="uvc_camera" name="uvc_camera" type="uvc_camera_node"/>
+
+    <!--  find_object_2d  -->    
+    <node pkg="find_object_2d" name="find_object_2d" type="find_object_2d">
+    <remap from="/image" to="/image_raw" />
+        </node>
+
+</launch>
