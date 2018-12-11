@@ -37,6 +37,11 @@ else:
 red   = start_objID
 green = red + 1
 blue  = green + 1
+whale = blue + 1
+dog   = whale + 1
+cat   = dog + 1
+bird  = cat + 1
+fox   = bird + 1
 
 def callback(data):
     detect_MultiArray = data.data
@@ -45,15 +50,25 @@ def callback(data):
         if detect_object == red :
             if connect == 1:
                 arduino_uno.write('2'.encode())
-            print 'red'
+            print 'The word is red'
         elif detect_object == green :
             if connect == 1:
                 arduino_uno.write('3'.encode())
-            print 'green'
+            print 'The word is green'
         elif detect_object == blue :
             if connect == 1:
                 arduino_uno.write('4'.encode())
-            print 'blue'
+            print 'The word is blue'
+        elif detect_object == whale :
+            print 'Oh My god !! It is a cute whale !!'
+        elif detect_object == dog :
+            print 'Oh My god !! cai-wa-yi dog !!'
+        elif detect_object == cat :
+            print 'Oh My god !! It is a running cat !!'
+        elif detect_object == bird :
+            print 'Oh My god !! It is a Art bird !'
+        elif detect_object == fox :
+            print 'Fox....it is my favorite animal !!'
     else :
         if connect == 1 :
             arduino_uno.write('F'.encode())
